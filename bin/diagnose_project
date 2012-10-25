@@ -51,7 +51,7 @@ def AbsProjectPath(relative_path):
 
 def getXcodePlist(pbxPath):
 	tmpfile = tempfile.mktemp (".xml")
-	os.system("plutil -convert xml1 -o %s %s" % (tmpfile, pbxPath))
+	os.system("plutil -convert xml1 -o \"%s\" \"%s\"" % (tmpfile, pbxPath))
 
 	return plistlib.readPlist( tmpfile )
 	
